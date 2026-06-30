@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "BookmarkIndex 书签启动器",
+  "version": "1.0.0",
+  "description": "美观高效的 Chrome 新标签页书签启动器，支持分类浏览、跨分类搜索、高频书签推荐、HTML 书签导入导出",
+  "permissions": ["bookmarks", "storage"],
+  "chrome_url_overrides": {
+    "newtab": "src/newtab/index.html"
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.ts",
+    "type": "module"
+  },
+  "icons": {
+    "16": "public/icons/icon16.png",
+    "48": "public/icons/icon48.png",
+    "128": "public/icons/icon128.png"
+  }
+}
