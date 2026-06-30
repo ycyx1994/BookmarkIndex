@@ -19,7 +19,7 @@ export function useRecommendation(): UseRecommendationResult {
 
   useEffect(() => {
     async function load() {
-      const stored = await chrome.storage.local.get([STORAGE_KEY, 'bookmarks'])
+      const stored = await chrome.storage.local.get([STORAGE_KEY, 'bookmarks']) as { clickStats?: ClickStats; bookmarks?: BookmarkItem[] }
       setStats(stored[STORAGE_KEY] || {})
       setBookmarks(stored.bookmarks || [])
     }

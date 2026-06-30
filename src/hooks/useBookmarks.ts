@@ -28,7 +28,7 @@ export function useBookmarks(): UseBookmarksResult {
   useEffect(() => {
     async function load() {
       try {
-        const stored = await chrome.storage.local.get(['bookmarks', 'folders'])
+        const stored = await chrome.storage.local.get(['bookmarks', 'folders']) as { bookmarks?: BookmarkItem[]; folders?: FolderItem[] }
         if (stored.bookmarks && stored.folders) {
           setBookmarks(stored.bookmarks)
           setFolders(stored.folders)
